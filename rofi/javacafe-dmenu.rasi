@@ -1,0 +1,56 @@
+* {
+    background-color:      #1a2026;
+}
+
+#window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    height:     76px;
+    border-color: #29343d;
+    border: 1px 0px 1px 0px;
+    children:   [ horibox ];
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+#prompt {
+    padding: 10px 15px 0px 14px;
+    color: #9ce5c0;
+    background-color: #29343d;
+}
+
+#listview {
+    text-color: #9ce5c0;
+    layout:     horizontal;
+    spacing:    40px;
+    lines:      100;
+    padding: 20px 30px 0px 30px;
+    /* background-color: #29343d; */
+}
+
+#entry {
+    color: #a3b8ef;
+    // color: #9ce5c0;
+    expand:     false;
+    padding: 20px 20px 0px 20px;
+    width:      10em;
+}
+
+#element {
+    height: 70px;
+    color: White;
+    background-color: #29343d;
+}
+
+element-text {
+    text-color: White;
+}
+
+element-text selected {
+    color:     #ccaced;
+    // background-color: #29343d;
+}

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# My script for screenshots, im bad at scripting pls help to make smaller
+
+case $1 in
+    "seldlclip")
+        maim -sqd 3 | xclip -selection clipboard -t image/png
+        ;;
+
+    "seldlplik")
+        maim -sqd 3 /tmp/screenshot.png; plik -q /tmp/screenshot.png | xclip -selection clipboard; rm /tmp/screenshot.png
+        ;;
+
+    "seldclip")
+        maim -sqd 1 | xclip -selection clipboard -t image/png
+        ;;
+
+    "seldplik")
+        maim -sqd 1 /tmp/screenshot.png; plik -q /tmp/screenshot.png | xclip -selection clipboard; rm /tmp/screenshot.png
+        ;;
+
+    "selclip")
+        maim -s | xclip -selection clipboard -t image/png
+        ;;
+
+    "selplik")
+        maim -s /tmp/screenshot.png; plik -q /tmp/screenshot.png | xclip -selection clipboard; rm /tmp/screenshot.png
+        ;;
+esac
+
