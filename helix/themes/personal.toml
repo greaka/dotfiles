@@ -1,0 +1,4 @@
+inherits = "kanagawa"
+
+[palette]
+sumiInk1 = "#1A2026"

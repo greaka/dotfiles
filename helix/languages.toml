@@ -1,0 +1,6 @@
+[[language]]
+name = "rust"
+formatter = { command = "cargo", args = ["+nightly", "fmt"] }
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
