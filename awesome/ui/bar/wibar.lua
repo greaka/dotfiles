@@ -55,7 +55,7 @@ local battery_bar = wibox.widget {
     forced_width = dpi(60),
     shape = helpers.rrect(beautiful.border_radius - 3),
     bar_shape = helpers.rrect(beautiful.border_radius - 3),
-    color = beautiful.xcolor8,
+    color = beautiful.xcolor8 .. 55,
     background_color = beautiful.xcolor0,
     border_width = dpi(0),
     border_color = beautiful.border_color,
@@ -119,32 +119,32 @@ awesome.connect_signal("signal::battery", function(value)
                               value .. '%' .. "</span>"
 end)
 
--- Timer for charging animation
-local q = 0
-local g = gears.timer {
-    timeout = 0.03,
-    call_now = false,
-    autostart = false,
-    callback = function()
-        if q >= 100 then q = 0 end
-        q = q + 1
-        battery_bar.value = q
-    end
-}
+-- -- Timer for charging animation
+-- local q = 0
+-- local g = gears.timer {
+--     timeout = 0.03,
+--     call_now = false,
+--     autostart = false,
+--     callback = function()
+--         if q >= 100 then q = 0 end
+--         q = q + 1
+--         battery_bar.value = q
+--     end
+-- }
 
--- The charging animation
-local running = false
-awesome.connect_signal("signal::charger", function(plugged)
-    if plugged then
-        g:again()
-        running = true
-    else
-        if running then
-            g:stop()
-            running = false
-        end
-    end
-end)
+-- -- The charging animation
+-- local running = false
+-- awesome.connect_signal("signal::charger", function(plugged)
+--     if plugged then
+--         g:again()
+--         running = true
+--     else
+--         if running then
+--             g:stop()
+--             running = false
+--         end
+--     end
+-- end)
 
 -- Date Widget ----------------------------------------------------------------
 

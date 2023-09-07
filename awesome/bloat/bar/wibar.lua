@@ -173,42 +173,42 @@ awesome.connect_signal("ears::battery", function(value)
             "</span>" .. value .. '% '
 end)
 
--- Timer for charging animation
-local q = 0
-local g = gears.timer {
-    timeout = 0.03,
-    call_now = false,
-    autostart = false,
-    callback = function()
-        if q >= 100 then q = 0 end
-        q = q + 1
-        battery_bar.value = q
-        battery_bar.color = {
-            type = 'linear',
-            from = {0, 0},
-            to = {75 - (100 - q), 20},
-            stops = {
-                {1 + (q) / 100, beautiful.xcolor10},
-                {0.75 - (q / 100), beautiful.xcolor1},
-                {1 - (q) / 100, beautiful.xcolor10}
-            }
-        }
-    end
-}
+-- -- Timer for charging animation
+-- local q = 0
+-- local g = gears.timer {
+--     timeout = 0.03,
+--     call_now = false,
+--     autostart = false,
+--     callback = function()
+--         if q >= 100 then q = 0 end
+--         q = q + 1
+--         battery_bar.value = q
+--         battery_bar.color = {
+--             type = 'linear',
+--             from = {0, 0},
+--             to = {75 - (100 - q), 20},
+--             stops = {
+--                 {1 + (q) / 100, beautiful.xcolor10},
+--                 {0.75 - (q / 100), beautiful.xcolor1},
+--                 {1 - (q) / 100, beautiful.xcolor10}
+--             }
+--         }
+--     end
+-- }
 
--- The charging animation
-local running = false
-awesome.connect_signal("ears::charger", function(plugged)
-    if plugged then
-        g:start()
-        running = true
-    else
-        if running then
-            g:stop()
-            running = false
-        end
-    end
-end)
+-- -- The charging animation
+-- local running = false
+-- awesome.connect_signal("ears::charger", function(plugged)
+--     if plugged then
+--         g:start()
+--         running = true
+--     else
+--         if running then
+--             g:stop()
+--             running = false
+--         end
+--     end
+-- end)
 
 local battery = format_progress_bar(battery_bar)
 
