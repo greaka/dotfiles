@@ -167,6 +167,8 @@ awful.keyboard.append_global_keybindings(
                   {description = "focus the previous screen", group = "screen"}),
         awful.key({modkey}, "d", function() awful.spawn(launcher) end,
                   {description = "show rofi ", group = "launcher"}),
+        awful.key({modkey}, "c", function() awful.spawn("rofi -show calc -modi calc -no-show-match -no-sort") end,
+                  {description = "show rofi calc", group = "launcher"}),
         awful.key({modkey}, "e", function()
             awful.spawn(gears.filesystem.get_configuration_dir() ..
                             "scripts/rofi-emoji")
