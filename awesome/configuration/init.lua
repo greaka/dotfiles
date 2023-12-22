@@ -17,7 +17,7 @@ browser = "firefox"
 filemanager = "nemo"
 discord = "discord"
 launcher = "rofi -show drun"
-music = terminal .. " start --class music ncspot"
+music = "psst-gui"
 
 -- Global Vars
 screen_width = awful.screen.focused().geometry.width

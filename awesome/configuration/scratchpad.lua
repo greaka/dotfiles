@@ -22,7 +22,7 @@ local music_scratch = bling.module.scratchpad:new{
 awesome.connect_signal("scratch::music", function() music_scratch:toggle() end)
 
 local discord_scratch = bling.module.scratchpad:new{
-    command = "discord",
+    command = discord,
     rule = {instance = "discord"},
     sticky = false,
     autoclose = false,
